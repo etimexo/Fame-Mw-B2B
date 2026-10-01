@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 667" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="1000" height="667" fill="#000000" rx="20"/>
+
+  <!-- 'M' - Lime Green Verticals -->
+  <!-- Left Pillar -->
+  <rect x="25" y="45" width="130" height="705" fill="#9DCE38" transform="scale(0.85) translate(40, 20)"/>
+  <!-- Center Hanging Pillar -->
+  <rect x="205" y="45" width="130" height="425" fill="#9DCE38" transform="scale(0.85) translate(40, 20)"/>
+  <!-- Right Pillar -->
+  <rect x="385" y="45" width="130" height="705" fill="#9DCE38" transform="scale(0.85) translate(40, 20)"/>
+
+  <!-- 'E' - Multi-colored Horizontal Bars -->
+  <!-- Top Red Bar -->
+  <rect x="585" y="45" width="350" height="165" fill="#D62846" transform="scale(0.85) translate(40, 20)"/>
+  <!-- Middle Yellow Bar (Shorter) -->
+  <rect x="585" y="310" width="255" height="165" fill="#F8E738" transform="scale(0.85) translate(40, 20)"/>
+  <!-- Bottom Sky Blue Bar -->
+  <rect x="585" y="585" width="350" height="165" fill="#5DB6E5" transform="scale(0.85) translate(40, 20)"/>
+
+  <!-- Slogan: IS WHAT MAKES ME DIFFERENT -->
+  <text x="60" y="555" fill="#FFFFFF" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="700" letter-spacing="1">IS WHAT MAKES ME DIFFERENT</text>
+
+  <!-- Registered Trademark ® Symbol -->
+  <g transform="translate(925, 600)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#FFFFFF" stroke-width="4.5"/>
+    <text x="0" y="11" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="700" text-anchor="middle">R</text>
+  </g>
+</svg>

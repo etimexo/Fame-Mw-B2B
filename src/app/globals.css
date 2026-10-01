@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Extracted Palette Tokens */
+  --brand-red: #E72A52;          /* Che Guevara Red - Primary */
+  --brand-red-hover: #B12642;    /* Cherryade - Primary Dark/Hover */
+  --brand-red-bright: #E7000B;   /* Miyamoto Red - Urgent/Danger */
+  --brand-blue: #82C7EF;         /* Light Sky Blue - Secondary */
+  --brand-blue-dark: #2A7EA6;    /* Deep Sky Blue for text */
+  --brand-beige: #E7DFA6;        /* Beige - Warm Accent */
+  --brand-lime: #BCD025;         /* Serpent Sceptre - High Impact Lime */
+  --brand-olive: #55751E;        /* Over the Hills - Olive Green */
+  --brand-dark: #111111;         /* Dreamless Sleep - Jet Black */
+  --brand-gray: #CCCCCC;         /* Light Gray - Border/Muted */
+  --brand-green: #15803D;        /* Pharmaceutical Green - Success */
+
+  /* System UI Semantic Tokens */
+  --background: #F9FAFB;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #111111;
+  --primary: #E72A52;
+  --primary-foreground: #FFFFFF;
+  --secondary: #82C7EF;
+  --secondary-foreground: #111111;
+  --muted: #F3F4F6;
+  --muted-foreground: #4B5563;
+  --accent: #E7DFA6;
+  --accent-foreground: #111111;
+  --destructive: #E7000B;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #E72A52;
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars with brand soft tones */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B12642;
+}
+
+/* Smooth transitions */
+.transition-standard {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Brand specific utility accents */
+.brand-btn-primary {
+  background-color: #E72A52;
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+.brand-btn-primary:hover {
+  background-color: #B12642;
+  box-shadow: 0 4px 12px rgba(231, 42, 82, 0.25);
+}
+
+.brand-badge-lime {
+  background-color: rgba(188, 208, 37, 0.18);
+  color: #486214;
+  border: 1px solid rgba(188, 208, 37, 0.45);
+}
+
+.brand-badge-blue {
+  background-color: rgba(130, 199, 239, 0.18);
+  color: #1a6288;
+  border: 1px solid rgba(130, 199, 239, 0.45);
+}
+
+.brand-badge-beige {
+  background-color: rgba(231, 223, 166, 0.35);
+  color: #5d5418;
+  border: 1px solid rgba(231, 223, 166, 0.6);
+}
+
+.brand-badge-red {
+  background-color: rgba(231, 42, 82, 0.12);
+  color: #B12642;
+  border: 1px solid rgba(231, 42, 82, 0.3);
+}
+
+.brand-badge-green {
+  background-color: rgba(21, 128, 61, 0.12);
+  color: #15803D;
+  border: 1px solid rgba(21, 128, 61, 0.3);
+}
+
+/* Print layout for waybills */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-waybill,
+  #printable-waybill * {
+    visibility: visible;
+  }
+  #printable-waybill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white;
+  }
+}
