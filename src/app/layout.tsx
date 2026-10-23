@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { DashboardProvider } from "@/context/DashboardContext";
-import DashboardShell from "@/components/layout/DashboardShell";
+import { AuthProvider } from "@/context/AuthContext";
+import AppShell from "@/components/layout/AppShell";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-[#E72A52] selection:text-white">
-        <DashboardProvider>
-          <DashboardShell>{children}</DashboardShell>
-        </DashboardProvider>
+        <AuthProvider>
+          <AppShell>{children}</AppShell>
+        </AuthProvider>
       </body>
     </html>
   );

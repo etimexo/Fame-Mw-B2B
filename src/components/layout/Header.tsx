@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Bell,
   Building2,
@@ -18,13 +18,17 @@ import {
   X,
   AlertTriangle,
   Package,
+  LogOut,
 } from "lucide-react";
 import { useDashboard } from "@/context/DashboardContext";
+import { useAuth } from "@/context/AuthContext";
 import { formatRelativeTime } from "@/lib/utils";
 import FameMeLogo from "@/components/ui/FameMeLogo";
 
 export default function Header({ onMobileMenuToggle }: { onMobileMenuToggle?: () => void }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const { signOut } = useAuth();
   const {
     partnerType,
     switchPartnerType,
@@ -252,6 +256,21 @@ export default function Header({ onMobileMenuToggle }: { onMobileMenuToggle?: ()
                 >
                   Manage Profile
                 </Link>
+              </div>
+
+              <div className="mt-2 px-2 pb-1">
+                <button
+                  id="sign-out-btn"
+                  onClick={async () => {
+                    setShowTypeMenu(false);
+                    await signOut();
+                    router.push("/login");
+                  }}
+                  className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-xs font-bold text-[#B12642] hover:bg-[#E72A52]/10 transition-standard"
+                >
+                  <LogOut className="h-4 w-4" />
+                  Sign Out
+                </button>
               </div>
             </div>
           )}

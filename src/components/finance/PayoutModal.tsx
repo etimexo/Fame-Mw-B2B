@@ -36,7 +36,7 @@ export default function PayoutModal({ isOpen, onClose }: PayoutModalProps) {
 
   const selectedBank = nigerianBanks.find((b) => b.id === bankId) || nigerianBanks[0];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
 
@@ -54,7 +54,7 @@ export default function PayoutModal({ isOpen, onClose }: PayoutModalProps) {
       return;
     }
 
-    const success = requestPayout(
+    const success = await requestPayout(
       amount,
       selectedBank.name,
       accountNumber,
